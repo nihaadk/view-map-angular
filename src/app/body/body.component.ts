@@ -15,6 +15,12 @@ export class BodyComponent implements OnInit {
   lat: number = 51.678418;
   lng: number = 7.809007;
 
+  markerName: string;
+  markerLat: number;
+  markerLng: number;
+  markerDraggable: boolean;
+  
+
   // Markers
   markers: Marker[] = [
     {
@@ -67,8 +73,20 @@ export class BodyComponent implements OnInit {
 
     var newLat = $event.coords.lat;
     var newLng = $event.coords.lng;
+  }
 
-    
+  addMarker(){
+    console.log("Marker: "+this.markerName+" "+this.markerLat+" "+this.markerLng+" "+this.markerDraggable );
+
+    var newMarker = {
+      name: this.markerName,
+      lat: this.markerLat,
+      lng: this.markerLng,
+      draggable: this.markerDraggable
+    }
+
+    this.markers.push(newMarker);
+    console.log(this.markers);
   }
 
 }

@@ -17,7 +17,7 @@
           <h3 class="panel-title">Add New Marker</h3>
         </div>
         <div class="panel-body">
-          <form class="form">
+          <form class="form" (ngSubmit)="addMarker()">
             <div class="row">
               <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                 <div class="form-group">
@@ -37,14 +37,14 @@
               <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                 <div class="form-group">
                   <select class="form-control" [(ngModel)]="markerDraggable" name="markerDraggable">
-                <option value="false">No</option>
-                <option value="true">Yes</option>
-              </select>
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                  </select>
                 </div>
               </div>
               <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                 <div class="form-group">
-                  <button type="submit" class="btn btn-primary" value="Map it!">Create</button>
+                  <button type="submit" class="btn btn-primary">Map it</button>
                 </div>
               </div>
             </div>
