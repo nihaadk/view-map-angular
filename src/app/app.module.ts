@@ -5,14 +5,24 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { AgmCoreModule } from 'angular2-google-maps/core';
+import { HeaderComponent } from './header/header.component';
+import { BodyComponent } from './body/body.component';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBbu_DyUeqggQ8dVrvtFslQ0h8mHUtviP4'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
