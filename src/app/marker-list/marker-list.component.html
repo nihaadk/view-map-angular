@@ -1,0 +1,18 @@
+<table class="table table-hover">
+  <thead >
+    <tr class="primary">
+      <th>Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Draggable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let m of markers;let i = index">
+      <td>{{ m.name }}</td>
+      <td>{{ m.lat }}</td>
+      <td>{{ m.lng }}</td>
+      <td>{{ m.draggable }}</td>
+    </tr>
+  </tbody>
+</table>

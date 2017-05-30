@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
+import { MarkerListComponent } from './marker-list/marker-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BodyComponent
+    BodyComponent,
+    MarkerListComponent
   ],
   imports: [
     BrowserModule,

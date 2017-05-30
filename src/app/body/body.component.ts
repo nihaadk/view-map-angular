@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Marker } from './marker.interface';
+
 
 @Component({
   selector: 'app-body',
@@ -10,16 +11,16 @@ export class BodyComponent implements OnInit {
 
   // Zoom Level
   zoom: number = 10;
-  
-  
+
+
   lat: number = 51.678418;
   lng: number = 7.809007;
 
   markerName: string;
-  markerLat: number;
-  markerLng: number;
-  markerDraggable: boolean;
-  
+  markerLat: string;
+  markerLng: string;
+  markerDraggable: boolean = false;
+
 
   // Markers
   markers: Marker[] = [
@@ -48,11 +49,11 @@ export class BodyComponent implements OnInit {
   ngOnInit() {
   }
 
-  clickedMarker(marker: Marker, index: number){
-    console.log("Cliked Marker: "+marker.name+" at index:"+index);
+  clickedMarker(marker: Marker, index: number) {
+    console.log("Cliked Marker: " + marker.name + " at index:" + index);
   }
 
-  mapClicked($event: any){
+  mapClicked($event: any) {
     var newMarker = {
       name: "None",
       lat: $event.coords.lat,
@@ -63,7 +64,7 @@ export class BodyComponent implements OnInit {
     this.markers.push(newMarker);
   }
 
-  markerDragEnd(marker: Marker,$event: any){
+  markerDragEnd(marker: Marker, $event: any) {
     var updMarker = {
       name: marker.name,
       lat: marker.lat,
@@ -75,15 +76,14 @@ export class BodyComponent implements OnInit {
     var newLng = $event.coords.lng;
   }
 
-  addMarker(){
-    console.log("Marker: "+this.markerName+" "+this.markerLat+" "+this.markerLng+" "+this.markerDraggable );
-
+  addMarker() {
     var newMarker = {
       name: this.markerName,
-      lat: this.markerLat,
-      lng: this.markerLng,
+      lat: parseFloat(this.markerLat),
+      lng: parseFloat(this.markerLng),
       draggable: this.markerDraggable
     }
+
 
     this.markers.push(newMarker);
     console.log(this.markers);
