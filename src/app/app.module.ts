@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AgmCoreModule } from '@agm/core';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { MarkerListComponent } from './marker-list/marker-list.component';
