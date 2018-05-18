@@ -20,7 +20,7 @@ ng serve
 
 ## Built With
 
-* [Angular 2+](https://angular.io/)
+* [Angular](https://angular.io/)
 * [TypeScript](https://www.typescriptlang.org/)
 * [Angular-cli](https://cli.angular.io/)
 * [Bootstrap](http://getbootstrap.com/)
